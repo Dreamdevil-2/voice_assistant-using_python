@@ -11,16 +11,14 @@ from plyer import notification
 from bs4 import BeautifulSoup
 import requests
 from gtts import gTTS
-#from news import speak_news, getNewsUrl
-#from OCR import OCR
-#from diction import translate
+
 from helpers import *
-#from youtube import youtube
+
 from sys import platform
 from pprint import pprint
 from selenium import webdriver
 import os
-import getpass
+
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -168,11 +166,7 @@ if __name__ == "__main__":
             remember = open('data.txt', 'w')
             remember.write(rememberMessage)
             remember.close()
-            """
-        elif 'dictionary' in query:
-            speak('What you want to search in your intelligent dictionary?')
-            translate(takeCommand())
-             elif 'voice' in query:"""
+            
         elif 'female' in query:
                 engine.setProperty('voice', voices[0].id)
         elif 'male' in query:
@@ -181,17 +175,7 @@ if __name__ == "__main__":
         elif 'do you remember anything' in query:
             remember = open('data.txt', 'r')
             speak("you said me to remember that" + remember.read())
-            """elif 'news' in query:
-            speak('Ofcourse sir..')
-            speak_news()
-            speak('Do you want to read the full news...')
-            test = takeCommand()
-            if 'yes' in test:
-                speak('Ok Sir, Opening browser...')
-                webbrowser.open(getNewsUrl())
-                speak('You can now read the full news from this website.')
-            else:
-                speak('No Problem Sir')"""
+            
         elif 'open code' in query:
             codePath = "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
